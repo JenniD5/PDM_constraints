@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,79 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OtrosConstraints" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Contenedor raiz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKv-lk-qJx" userLabel="Contenedor bodega">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BODEGA " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLo-OB-KgP" userLabel="etiqueta bodega">
+                                        <rect key="frame" x="84.5" y="16" width="152" height="51"/>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="warehouse (1)" translatesAutoresizingMaskIntoConstraints="NO" id="8gl-ZD-0s2">
+                                        <rect key="frame" x="8" y="83" width="304" height="141"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.61156979229999997" blue="0.52366559710000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="8gl-ZD-0s2" firstAttribute="top" secondItem="CLo-OB-KgP" secondAttribute="bottom" constant="16" id="99d-Zl-CwK"/>
+                                    <constraint firstAttribute="trailing" secondItem="8gl-ZD-0s2" secondAttribute="trailing" constant="8" id="FjE-TW-PKf"/>
+                                    <constraint firstItem="8gl-ZD-0s2" firstAttribute="leading" secondItem="RKv-lk-qJx" secondAttribute="leading" constant="8" id="P6N-Qt-TtH"/>
+                                    <constraint firstAttribute="bottom" secondItem="8gl-ZD-0s2" secondAttribute="bottom" constant="16" id="Tgu-bu-AFW"/>
+                                    <constraint firstItem="CLo-OB-KgP" firstAttribute="top" secondItem="RKv-lk-qJx" secondAttribute="top" constant="16" id="fLQ-2g-9vj"/>
+                                    <constraint firstItem="CLo-OB-KgP" firstAttribute="centerX" secondItem="RKv-lk-qJx" secondAttribute="centerX" id="zVj-T0-S7a"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQJ-bs-kKQ" userLabel="Contenedor temperatura">
+                                <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d33-gv-WeJ" userLabel="etiqueta temperatura">
+                                        <rect key="frame" x="66" y="76" width="189" height="88"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="73"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thermometer_down" translatesAutoresizingMaskIntoConstraints="NO" id="0lW-mt-DI4" userLabel="imagen termometro">
+                                        <rect key="frame" x="240" y="32" width="64" height="48"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92240104249999999" green="0.81227173060000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="d33-gv-WeJ" firstAttribute="centerY" secondItem="WQJ-bs-kKQ" secondAttribute="centerY" id="KSV-zV-wmi"/>
+                                    <constraint firstAttribute="trailing" secondItem="0lW-mt-DI4" secondAttribute="trailing" constant="16" id="TAE-bQ-Dnj"/>
+                                    <constraint firstItem="d33-gv-WeJ" firstAttribute="centerX" secondItem="WQJ-bs-kKQ" secondAttribute="centerX" id="U36-T0-VUz"/>
+                                    <constraint firstItem="0lW-mt-DI4" firstAttribute="height" secondItem="WQJ-bs-kKQ" secondAttribute="height" multiplier="0.2" id="Uqx-T2-Bal"/>
+                                    <constraint firstItem="0lW-mt-DI4" firstAttribute="top" secondItem="WQJ-bs-kKQ" secondAttribute="top" constant="32" id="VKJ-l1-N56"/>
+                                    <constraint firstItem="0lW-mt-DI4" firstAttribute="width" secondItem="WQJ-bs-kKQ" secondAttribute="width" multiplier="0.2" id="ubK-rw-DG2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RKv-lk-qJx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4th-QS-tZb"/>
+                            <constraint firstItem="RKv-lk-qJx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="51c-Ss-076"/>
+                            <constraint firstItem="RKv-lk-qJx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W1c-3H-I7l"/>
+                            <constraint firstItem="WQJ-bs-kKQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Wgm-vj-vnQ"/>
+                            <constraint firstItem="WQJ-bs-kKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yto-lN-QO2"/>
+                            <constraint firstItem="RKv-lk-qJx" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="eiu-ou-Hft"/>
+                            <constraint firstItem="WQJ-bs-kKQ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="m3a-xq-rd0"/>
+                            <constraint firstItem="WQJ-bs-kKQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yGf-gL-ojK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="117.39130434782609"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="thermometer_down" width="512" height="512"/>
+        <image name="warehouse (1)" width="512" height="512"/>
+    </resources>
 </document>
